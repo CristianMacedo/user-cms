@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=IBM+Plex+Sans:wght@400;700&display=swap');
+
+:root {
+   --plex-sans: 'IBM Plex Sans', sans-serif;
+   --plex-mono: 'IBM Plex Mono', monospace;
+   --main-gradient: linear-gradient(to top, #09203f 0%, #537895 100%);
+   --container-color: rgb(231, 231, 231);
+   --text-color: white;
+}
+
+* {
+   font-family: var(--plex-sans);
+   box-sizing: border-box;
+   font-size: 20px;
+   margin: 0;
+   padding: 0;
+   transition: 0.1s ease;
+}
+
+label {
+   font-weight: 700;
+}
+
+label::after {
+   content: ":"
+}
+
+body {
+   padding: 2em;
+   height: 100vh;
+   width: 100vw;
+   background-image: var(--main-gradient);
+   
+   display: grid;
+   grid-template-columns: 2fr 8fr 2fr;
+}
+
+.container {
+   width: 100%;
+
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 1em;
+   align-items: center;
+}
+
+.list {
+   height: 80vh;
+   overflow-y: auto;
+   background-color: var(--container-color);
+}
+
+.edit {
+   background-color: var(--container-color);
+}
+
+.item {
+   width: 100%;
+   padding: 1em;
+
+   display: grid;
+   grid-template-columns: 2fr 8fr 2fr;
+   border: 1px solid darkgray;
+}
+
+.item:hover {
+   cursor: pointer;
+   background-color: rgb(220,220,220);
+}
+
+.item-content {
+   padding: 0 1em;
+}
+
+.name {
+   font-weight: 700;
+   font-size: 20px;
+}
+
+.location {
+   font-size: 15px;
+}
+
+.edit {
+   height: fit-content;
+   width: 100%;
+   padding: 1em;
+}
+
+.title {
+   text-align: center;
+   margin-bottom: 1em;
+}
+
+.form {
+   display: grid;
+   grid-template-columns: 2fr 10fr;
+   grid-auto-rows: 50px;
+   align-items: center;   
+}
+
+.avatar {
+   width: 100px;
+}
+
+.button {
+   float: right;
+   width: fit-content;
+   border-radius: 5px;
+   color: white;
+   margin: 0.5em 0 0.5em 0.5em;
+   padding: 0.5em;
+   /* font-weight: 700; */
+}
+
+.button.success{
+   background-color: rgb(16, 173, 87);
+}
+
+.button.danger{
+   background-color: rgb(173, 16, 16);
+}
+
+.button:hover {
+   cursor: pointer;
+   filter: brightness(120%)
+}
+
+.cta {
+   font-size: 15px;
+}
+
+@media only screen and (max-width: 1024px) {
+   body {
+      grid-template-columns: 1fr 10fr 1fr;
+   }
+
+   .container {
+      grid-template-columns: 1fr;
+   }
+}
